@@ -9,7 +9,7 @@ on:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
-  PRODUCTION_API_URL: https://143.198.213.161/health
+  PRODUCTION_API_URL: http://143.198.213.161:8080/health
   # Must match the image in docker-compose.prod.yml (used for rollback tagging)
   API_IMAGE: ghcr.io/kmaratas-fs/automated-dotnet-pipeline:latest
   VPS_API_URL: http://localhost:8080/health
