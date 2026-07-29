@@ -31,8 +31,12 @@ app.MapGet("/weatherforecast", () =>
 })
 .WithName("GetWeatherForecast");
 
-app.MapGet("/health", () => Results.Ok(new { status = "Healthy" }))
-    .WithName("GetHealth");
+// app.MapGet("/health", () => Results.Ok(new { status = "Healthy" }))
+//     .WithName("GetHealth");
+
+// Rollback demo
+app.MapGet("/health", () => Results.Problem(
+    statusCode: StatusCodes.Status500InternalServerError));
 
 app.Run();
 
